@@ -53,6 +53,7 @@ group :development do
   gem 'capistrano3-puma'
   gem 'capistrano-bundler'
   gem 'capistrano-rvm'
+  gem 'mysql2'
 end
 
 group :preproduction, :production do
