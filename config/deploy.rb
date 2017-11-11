@@ -2,7 +2,7 @@
 lock "~> 3.10.0"
 
 set :application, "NinjaServ"
-set :repo_url, "git@github.com/Proxyass/NinjaservEsport.git"
+set :repo_url, "git@github.com:Proxyass/NinjaservEsport.git"
 
 # Default branch is :master
 # ask :branch, `git rev-parse --abbrev-ref HEAD`.chomp
