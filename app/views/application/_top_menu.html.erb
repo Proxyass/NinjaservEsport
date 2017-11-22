@@ -13,7 +13,7 @@
     </ul>
   </div>
   <a href="/" class="navbar-brand">
-    <span class="navbar-brand-name" style="vertical-align: middle;">NinjaServ</span>
+    <%= image_tag("ninja-logo", width: "120", class: "navbar-brand-icon") %>
     <% if Rails.application.secrets.github_branch && Rails.application.secrets.github_branch == "preprod" %>
     <span class="label label-info" style="font-size:8px;">Preprod</span>
     <% elsif Rails.application.secrets.github_branch && Rails.application.secrets.github_branch == "dev" %>
