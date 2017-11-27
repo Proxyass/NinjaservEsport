@@ -41,11 +41,11 @@ server {
     proxy_pass http://rails_app_ninjaserv_com;
   }
 
-  location ~* \.(js|css|png|jpg|jpeg|gif|ico)$ {
+  location ~ ^/assets/ {
     expires 1y;
-    log_not_found off;
-  }
-  location /fonts {
-    alias /var/www/NinjaServ/current/vendor/assets/fonts;
+    add_header Cache-Control public;
+
+    add_header ETag "";
+    break;
   }
 }
