@@ -3,6 +3,10 @@ Rails.application.routes.draw do
   root  'home#index'
 
   ## Teams
-  resources :team
+  resources :teams
+  # -------------
+
+  ## Users
+  resources :users
   # -------------
 end
