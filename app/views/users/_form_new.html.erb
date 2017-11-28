@@ -1,12 +1,42 @@
-<%= form_for(@user,:html => {:class => ''}) do |f| %>
+<%= form_for @user do |f| %>
+<% if f.object.errors.any? %>
+<div class="form-group">
+  <div class="alert alert-danger" role="alert">
+    <div id="clear"></div>
+    <div id="error">
+      <p class="title">
+        <%= t 'activemodel.errors.messages', count: f.object.errors.count %>
+      </p>
+      <ul>
+        <% f.object.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+        <% end %>
+      </ul>
+    </div>
+    <div id="clear"></div>
+  </div>
+</div>
+<% end %>
+<div class="form-group">
+  <%= label_tag 'firstname', "Firstname" %>
+  <%= f.text_field :firstname, class: 'form-control'%>
+</div>
+<div class="form-group">
+  <%= label_tag 'lastname', "Lastname" %>
+  <%= f.text_field :lastname, class: 'form-control'%>
+</div>
 <div class="form-group">
   <%= label_tag 'mail', "Email address" %>
   <%= f.text_field :mail, class: 'form-control'%>
-  <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+  <small class="form-text text-muted">We'll never share your email with anyone else.</small>
 </div>
 <div class="form-group">
-  <label for="exampleInputPassword1">Password</label>
-  <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+  <%= label_tag 'password', "Password" %>
+  <%= f.password_field :password, class: 'form-control'%>
+</div>
+<div class="form-group">
+  <%= label_tag 'password', "Password confirmation" %>
+  <%= f.password_field :password_confirmation, class: 'form-control'%>
 </div>
 <button type="submit" class="btn btn-primary">Submit</button>
 <% end %>
