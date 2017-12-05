@@ -1,0 +1,9 @@
+<section class="mt-4">
+  <div class="text-center">
+    <h1>Hi <%= current_logged_user.firstname.capitalize %></h1>
+    <blockquote class="blockquote text-center">
+      <p class="mb-0"><%= current_logged_user.firstname.capitalize %> <%= current_logged_user.lastname.capitalize %></p>
+      <span class="badge badge-secondary"><%= current_logged_user.mail %></span>
+    </blockquote>
+  </div>
+</section>

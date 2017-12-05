@@ -1,4 +1,5 @@
 class UsersController < ApplicationController
+  before_action :must_be_proprietary, only: [:edit, :update, :show]
 
   def new
     @user = User.new
@@ -14,6 +15,10 @@ class UsersController < ApplicationController
       flash.now[:danger] =  "Failed to create "+@user.firstname + ", "+@user.errors.full_messages.to_sentence+"."
       render 'new'
     end
+  end
+
+  def show
+
   end
 
   def user_params
