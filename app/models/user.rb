@@ -8,6 +8,7 @@ class User < ApplicationRecord
 
   # Hooks
   before_create :gen_token_and_salt
+  before_create :change_password
   before_save :set_lowercase
   # -----
 
@@ -34,6 +35,23 @@ class User < ApplicationRecord
       salt = SecureRandom.hex(12)
       break salt unless User.exists?(salt: salt)
     end
+  end
+
+  def encrypt_password(password)
+    return Digest::SHA2.new(512).hexdigest(password+self.salt)
+  end
+
+  def change_password(password=self.password)
+    passwd=self.encrypt_password(password)
+    self.password = passwd
+    self.password_confirmation = passwd
+  end
+
+  def authenticate(password)
+    if encrypt_password(password) == self.password
+      return true
+    end
+    return false
   end
 
 end

@@ -1,0 +1,21 @@
+<table style="height: 80vh; width: 100%;">
+  <tbody>
+    <tr>
+      <td class="align-middle">
+        <div class="row justify-content-md-center">
+          <div class="col-md-6">
+            <h1>Login</h1>
+            <% flash.each do |key, value| %>
+            <div id="error_explanation" class="alert alert-<%=key%>" role="alert">
+              <p>
+                <%= value %>
+              </p>
+            </div>
+            <% end %>
+            <%= render 'form_new' %>
+          </div>
+        </div>
+      </td>
+    </tr>
+  </tbody>
+</table>
