@@ -39,6 +39,7 @@ ActiveRecord::Schema.define(version: 20171127073529) do
     t.string "salt"
     t.string "token"
     t.boolean "validated"
+    t.boolean "admin"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

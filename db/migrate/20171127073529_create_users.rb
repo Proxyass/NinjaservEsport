@@ -8,6 +8,7 @@ class CreateUsers < ActiveRecord::Migration[5.1]
       t.string :salt
       t.string :token
       t.boolean :validated
+      t.boolean :admin
       t.timestamps
     end
   end
