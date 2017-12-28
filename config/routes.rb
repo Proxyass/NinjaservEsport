@@ -3,11 +3,17 @@ Rails.application.routes.draw do
   root  'home#index'
 
   ## Teams
-  resources :teams
+  resources :teams, only: [:index, :show]
   # -------------
 
   ## Users
   resources :users
+  # -------------
+
+  ## Administration area
+  namespace :admin do
+    resources :teams, except: [:show]
+  end
   # -------------
 
   ## Sessions

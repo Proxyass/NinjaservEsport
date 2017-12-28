@@ -4,6 +4,9 @@
     <blockquote class="blockquote text-center">
       <p class="mb-0"><%= current_logged_user.firstname.capitalize %> <%= current_logged_user.lastname.capitalize %></p>
       <span class="badge badge-secondary"><%= current_logged_user.mail %></span>
+      <% if current_logged_user.admin %>
+      <span class="badge badge-info">admin</span>
+      <% end %>
     </blockquote>
   </div>
 </section>

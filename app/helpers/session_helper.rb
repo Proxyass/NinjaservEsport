@@ -41,7 +41,7 @@ module SessionHelper
   end
 
   def must_be_admin
-    if current_logged_user == nil || current_logged_user.admin
+    if current_logged_user == nil || !current_logged_user.admin
       render_403
     end
   end
