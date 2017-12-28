@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171127073529) do
+ActiveRecord::Schema.define(version: 20171228170928) do
 
   create_table "games", force: :cascade do |t|
     t.string "name"
@@ -39,9 +39,9 @@ ActiveRecord::Schema.define(version: 20171127073529) do
     t.string "salt"
     t.string "token"
     t.boolean "validated"
-    t.boolean "admin"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.boolean "admin", default: false
   end
 
 end
