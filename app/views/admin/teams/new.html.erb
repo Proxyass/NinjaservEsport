@@ -6,9 +6,9 @@
     </p>
   </div>
   <% end %>
-  <% if @games %>
-  <%= render 'form_new' %>
+  <% if @games.count > 0 %>
+    <%= render 'form_new' %>
   <% else %>
-  <%= render 'action_required', title: "Humm..., not cool!", lead: "Don't worry, we're going to solve this issue.", data: "You need to create a game first. Then come back here to create a team.", link_title: "Create a game", link: new_admin_game_path %>
+    <%= render 'action_required', title: "Humm..., not cool!", lead: "Don't worry, we're going to solve this issue.", data: "You need to create a game first. Then come back here to create a team.", link_title: "Create a game", link: new_admin_game_path %>
   <% end %>
 </section>
