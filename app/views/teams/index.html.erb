@@ -1,0 +1,11 @@
+<section class="mt-4">
+  <% @teams.each do |team| %>
+  <div class="card" style="margin-bottom: 1em;">
+    <div class="card-body">
+      <h5 class="card-title"><%= team.name %></h5>
+      <h6 class="card-subtitle mb-2 text-muted"><%= team.game.name %></h6>
+      <%= team.description %>
+    </div>
+  </div>
+  <% end %>
+</section>

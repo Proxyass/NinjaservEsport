@@ -4,6 +4,7 @@ Rails.application.routes.draw do
 
   ## Teams
   resources :teams, only: [:index, :show]
+  resources :games, only: [:index, :show]
   # -------------
 
   ## Users
@@ -13,6 +14,7 @@ Rails.application.routes.draw do
   ## Administration area
   namespace :admin do
     resources :teams, except: [:show]
+    resources :games, except: [:show]
   end
   # -------------
 
