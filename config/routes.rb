@@ -13,8 +13,10 @@ Rails.application.routes.draw do
 
   ## Administration area
   namespace :admin do
-    resources :teams, except: [:show]
-    resources :games, except: [:show]
+    resources :teams, except: [:index, :show] do
+      get 'delete'
+    end
+    resources :games, except: [:index, :show]
   end
   # -------------
 

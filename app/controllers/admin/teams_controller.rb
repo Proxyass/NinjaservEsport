@@ -1,4 +1,5 @@
 class Admin::TeamsController < Admin::BaseAdminController
+  before_action :team_must_exist,   except: [:new, :create]
 
   def new
     @team = Team.new
@@ -15,6 +16,27 @@ class Admin::TeamsController < Admin::BaseAdminController
       render 'new'
     end
   end
+
+  def delete
+  end
+
+  def destroy
+    if @team.destroy
+      flash[:success] = "Team "+@team.name.capitalize+" successfully deleted."
+      redirect_to teams_path
+    else
+      flash.now[:danger] =  "Failed to delete "+@team.name + ", "+@team.errors.full_messages.to_sentence+"."
+      render 'delete'
+    end
+  end
+
+  def team_must_exist
+    @team = Team.find_by(id: params[:team_id]) || Team.find_by(id: params[:id])
+    if !@team
+      render_404
+    end
+  end
+
 
   def team_params
     params.require(:team).permit(:name, :description, :game_id, :logo_url)

@@ -1,3 +1,11 @@
-// Place all the styles related to the team controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+.card {
+  border-radius: 0;
+  -webkit-box-shadow: 1px 1px 2px 0px rgba(0,0,0,0.75);
+  -moz-box-shadow: 1px 1px 2px 0px rgba(0,0,0,0.75);
+  box-shadow: 1px 1px 2px 0px rgba(0,0,0,0.75);
+  border:none;
+}
+
+.team_toggle{
+  cursor: pointer;
+}

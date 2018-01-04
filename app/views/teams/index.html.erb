@@ -1,10 +1,42 @@
+<% if is_admin %>
+<%= render 'admin/teams/team_menu' %>
+<% end %>
 <section class="mt-4">
+  <% flash.each do |key, value| %>
+  <div id="error_explanation" class="alert alert-<%=key%>" role="alert">
+    <p>
+      <%= value %>
+    </p>
+  </div>
+  <% end %>
   <% @teams.each do |team| %>
   <div class="card" style="margin-bottom: 1em;">
     <div class="card-body">
-      <h5 class="card-title"><%= team.name %></h5>
-      <h6 class="card-subtitle mb-2 text-muted"><%= team.game.name %></h6>
-      <%= team.description %>
+      <div class="team_toggle" data-toggle="collapse" data-target="#collapse_team_<%= team.id %>" aria-expanded="false" aria-controls="collapse_team_<%= team.id %>">
+        <h5 class="card-title"><%= team.name %></h5>
+        <h6 class="card-subtitle mb-2 text-muted"><%= team.game.name %></h6>
+        <%= team.description %>
+      </div>
+      <div class="collapse" id="collapse_team_<%= team.id %>">
+        <div class="card-body">
+          <div class="row">
+            <div class="col-md-3">
+              <img src="#" class="rounded" height="80" width="80"/>
+            </div>
+            <div class="col-md-6">
+              Prénom 'Pseudo' Nom
+            </div>
+            <div class="col-md-3">
+              Role
+            </div>
+          </div>
+        </div>
+      </div>
+      <% if is_admin %>
+      <div class="float-right">
+        <%= link_to "Delete", admin_team_delete_path(team.id), class: "btn btn-sm btn-danger" %>
+      </div>
+      <% end %>
     </div>
   </div>
   <% end %>
