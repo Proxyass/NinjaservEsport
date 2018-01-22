@@ -20,6 +20,10 @@ Rails.application.routes.draw do
   end
   # -------------
 
+  ## Static pages
+  get     'about_us'                       => 'statics#about_us'
+  # -------------
+
   ## Sessions
   get     'login'                          => 'sessions#new'
   post    'login'                          => 'sessions#create'
