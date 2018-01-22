@@ -26,6 +26,11 @@
     </p>
   </section>
   <section class="text-center">
-    <%= link_to image_tag("twitter.svg", border: 0, size: "32"), "https://twitter.com/NinjaservEsport", target: "_blank" %>
+    <%= link_to 'https://twitter.com/NinjaservEsport', target: "_blank" do %>
+    <%= image_tag 'twitter.svg', size: 32, alt: 'Twitter'%>
+    <p>
+      @NinjaservEsport
+    </p>
+    <% end %>
   </section>
 </div>
