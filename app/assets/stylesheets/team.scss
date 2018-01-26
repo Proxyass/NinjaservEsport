@@ -334,5 +334,83 @@ padding-right: 0;
     font-size: 16px;
     line-height: 26px;
 }
+/*+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++*/
+/* ---------------------------------- 16. Grayscale images ------------------------------------- */
+/*+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++*/
+
+img.grayImg {
+    filter: url(filters.svg#grayscale); /* Firefox 3.5+ */
+
+    filter: gray; /* IE6-9 */
+    -webkit-filter: grayscale(1); /* Google Chrome & Safari 6+ */
+  }
+
+img.grayImg:hover {
+    filter: none;
+    -webkit-filter: grayscale(0);}
+
+.grayscale {
+  /* Firefox 10+, Firefox on Android */
+  filter: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg'><filter id='grayscale'><feColorMatrix type='matrix' values='0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0 0 0 1 0'/></filter></svg>#grayscale");
+  /* IE 6-9 */
+  filter: gray;
+  /*
+  Chrome 19+,
+  Safari 6+,
+  Safari 6+ iOS,
+  Opera 15+
+  */
+  -webkit-filter: grayscale(100%);
+}
+.grayscale.grayscale-fade {
+  
+  -moz-transition: filter 1.3s ease-in;
+  transition: filter 1.2s ease;
+  -webkit-transition: -webkit-filter 1.2s;
+  -moz-backface-visibility:hidden;
+}
+
+.grayscale.grayscale-off,
+.grayscale.grayscale-fade:hover {
+  -webkit-filter: grayscale(0%);
+  filter: none;
+}
+.grayscale.grayscale-replaced {
+  filter: none;
+  -webkit-filter: none;
+}
+
+.grayscale-replaced > svg {
+  opacity: 1;
+  -webkit-transition: opacity 1.2s ease;
+  -moz-transition: opacity 1.2s ease;
+  -moz-backface-visibility:hidden;
+  transition: opacity 1.2s ease;
+}
+
+.element-item:hover > .grayscale-replaced > svg,
+.grayscale-replaced.grayscale-fade:hover > svg{
+  -moz-transition: opacity 1.2s ease;;
+  transition: opacity 1.2s ease;
+  opacity: 0;
+}
+
+@keyframes cf3FadeInOut {
+  0% {
+  filter: url(filters.svg#grayscale);
+  }
+
+  100% {
+  filter: none;
+  }
+}
+
+  #cf3 .element-item > img {
+  animation-name: cf3FadeInOut;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: infinite;
+  animation-duration: 10s;
+  animation-direction: alternate;
+  }
 
 
