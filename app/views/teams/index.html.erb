@@ -1,7 +1,7 @@
 <% if is_admin %>
 <%= render 'admin/teams/team_menu' %>
 <% end %>
-<section class="mt-4">
+<section class="mt-6">
   <% flash.each do |key, value| %>
   <div id="error_explanation" class="alert alert-<%=key%>" role="alert">
     <p>
