@@ -9,3 +9,330 @@
 .team_toggle{
   cursor: pointer;
 }
+/*+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++*/
+/* ----------------------------------------- 5. Team ------------------------------------------- */
+/*+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++*/
+
+.pad-right0{
+padding-right: 0;
+}
+
+.flip-container {
+/*    perspective: 1000;*/
+  background: transparent;
+  height: 280.48px !important;
+  
+}
+
+.flip-container:hover .flipper,
+.flip-container.hover .flipper {
+        transform: rotateY(180deg);
+    }
+
+.flip-container, .front, .back {
+    width: auto;
+    height: auto;
+}
+
+.flipper {
+    transition: 0.6s;
+    transform-style: preserve-3d;
+    position: relative;
+  top:75px;
+}
+
+.front, .back {
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.class1{
+  visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+}
+
+.class2{
+  visibility: visible;
+  -webkit-backface-visibility: visible;
+  backface-visibility: visible;
+}
+
+.class1i{
+  visibility: hidden;
+}
+
+.class2i{
+  visibility: visible;
+}
+
+.front {
+    z-index: 2;
+    /* for firefox 31 */
+    transform: rotateY(0deg);
+}
+
+.back {
+    transform: rotateY(180deg);
+}
+
+.hexagons {
+  width:1100px;
+  letter-spacing:0;
+  font-size:0;
+  margin: 0 auto;
+}
+
+.hexagon-holder{
+  position: relative;
+  margin-left: 21.5px;
+  margin-right: 21.5px;
+  width: 226px; 
+  height: 130.48px;
+  display: inline-block;
+  letter-spacing:0;
+  font-size:0;
+}
+
+.hexagon {
+  position: relative;
+  width: 226px; 
+  height: 130.48px;
+  background-size: auto 258.6529px;
+  background-position: center;
+  display:inline-block;
+  z-index:1;
+}
+
+.hexagon1 {
+  position: relative;
+  width: 226px; 
+  height: 130.48px;
+  background-image: url(../images/ninja-logo.png);
+  background-size: auto 258.6529px;
+  background-position: center;
+  display:inline-block;
+  z-index:1;
+}
+
+.hexagon2 {
+  position: relative;
+  width: 226px; 
+  height: 130.48px;
+  background-image: url(../images/ninja-logo.png);
+  background-size: auto 258.6529px;
+  background-position: center;
+  display:inline-block;
+  z-index:1;
+}
+
+.hexagon3 {
+  position: relative;
+  width: 226px; 
+  height: 130.48px;
+  background-image: url(../images/ninja-logo.png);
+  background-size: auto 258.6529px;
+  background-position: center;
+  display:inline-block;
+  z-index:1;
+}
+
+.hexagon4 {
+  position: relative;
+  width: 226px; 
+  height: 130.48px;
+  background-image: url(../images/ninja-logo.png);
+  background-size: auto 258.6529px;
+  background-position: center;
+  display:inline-block;
+  z-index:1;
+}
+
+.hexagon .hexTop,
+.hexagon .hexBottom {
+  position: absolute;
+  z-index: 1;
+  width: 160.81px;
+  height: 160.81px;
+  overflow: hidden;
+  -webkit-transform: scaleY(0.5774) rotate(-45deg);
+  -ms-transform: scaleY(0.5774) rotate(-45deg);
+  transform: scaleY(0.5774) rotate(-45deg);
+  background: inherit;
+  left: 33.10px;
+  -webkit-backface-visibility: hidden
+}
+
+/*counter transform the bg image on the caps*/
+.hexagon .hexTop:after,
+.hexagon .hexBottom:after {
+  content: "";
+  position: absolute;
+  width: 224.0000px;
+  height: 129.32646029847618px;
+  -webkit-transform:  rotate(45deg) scaleY(1.7321) translateY(-64.6632px);
+  -ms-transform:      rotate(45deg) scaleY(1.7321) translateY(-64.6632px);
+  transform:          rotate(45deg) scaleY(1.7321) translateY(-64.6632px);
+  -webkit-transform-origin: 0 0;
+  -ms-transform-origin: 0 0;
+  transform-origin: 0 0;
+  background: inherit;
+}
+
+.hexagon .hexTop {
+  top: -79.9031px;
+}
+
+.hexagon .hexTop:after {
+  background-position: center top;
+}
+
+.hexagon .hexBottom {
+  bottom: -80.9031px;
+}
+
+.hexagon .hexBottom:after {
+  background-position: center bottom;
+}
+
+.hexagon:after {
+  content: "";
+  position: absolute;
+  top: 0.5774px;
+  left: 0;
+  width: 224.0000px;
+  height: 129.3265px;
+  z-index: 2;
+  background: inherit;
+}
+
+.hexagon:nth-child(7n-2) {
+    margin-left: 156px;
+}
+
+.hexagon:nth-child(n+5) {
+    margin-top: 29px;
+}
+
+.hex-plus{
+  font-size: 100px;
+  font-weight: 100; 
+}
+
+.hexText{
+  position: absolute;
+  left:0;
+  top:0;
+  z-index: 3;
+  color: #000;
+  opacity: 1;
+  font-size: 20px;
+  text-align:center;
+  width: 100%;
+  color: #fff;
+}
+
+.hexagon-overlay {
+  position: absolute;
+  width: 226px; 
+  height: 130.48px;
+  margin: 0;
+  background-color: #181818;
+  background-size: auto 247.1059px;
+  background-position: center;
+  border-left: solid 6px #333333;
+  border-right: solid 6px #333333;
+  opacity: .7;
+  z-index: 3;
+  top:0;
+  left:0;
+}
+
+.hexagon-overlay .hexTop,
+.hexagon-overlay .hexBottom {
+  position: absolute;
+  z-index: 1;
+  width: 159.81px;
+  height: 159.81px;
+  overflow: hidden;
+  -webkit-transform: scaleY(0.5774) rotate(-45deg);
+  -ms-transform: scaleY(0.5774) rotate(-45deg);
+  transform: scaleY(0.5774) rotate(-45deg);
+  background: inherit;
+  left: 27.10px;
+}
+
+/*counter transform the bg image on the caps*/
+.hexagon-overlay .hexTop:after,
+.hexagon-overlay .hexBottom:after {
+  content: "";
+  position: absolute;
+  width: 214.0000px;
+  height: 123.55295760657991px;
+  -webkit-transform:  rotate(45deg) scaleY(1.7321) translateY(-61.7765px);
+  -ms-transform:      rotate(45deg) scaleY(1.7321) translateY(-61.7765px);
+  transform:          rotate(45deg) scaleY(1.7321) translateY(-61.7765px);
+  -webkit-transform-origin: 0 0;
+  -ms-transform-origin: 0 0;
+  transform-origin: 0 0;
+  background: inherit;
+}
+
+.hexagon-overlay .hexTop {
+  top: -79.9031px;
+  border-top: solid 8.4853px #333333;
+  border-right: solid 8.4853px #333333;
+}
+
+.hexagon-overlay .hexTop:after {
+  background-position: center top;
+}
+
+.hexagon-overlay .hexBottom {
+  bottom: -79.9031px;
+  border-bottom: solid 8.4853px #333333;
+  border-left: solid 8.4853px #333333;
+}
+
+.hexagon-overlay .hexBottom:after {
+  background-position: center bottom;
+}
+
+.hexagon-overlay .hexagon:after {
+  content: "";
+  position: absolute;
+  top: 3.4641px;
+  left: 0;
+  width: 214.0000px;
+  height: 123.5530px;
+  z-index: 2;
+  background: inherit;
+}
+
+.hex-socials li {
+    display: inline-block;
+    width: 35px;
+}
+
+.hex-socials li a {display: block; padding: 6px; font-size: 18px; line-height: 18px;}
+
+.social-hover{
+    margin-right: 10px;
+}
+
+.team-text{
+    margin-left: 30px;
+    margin-right: 30px;
+    margin-top: 0px;
+    margin-bottom: 10px;
+    text-align: center;
+    /*font-weight: 500;*/
+    color: #a7a7a7;
+    font-size: 16px;
+    line-height: 26px;
+}
+
+
