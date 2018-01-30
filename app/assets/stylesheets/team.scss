@@ -20,9 +20,9 @@ padding-right: 0;
 .flip-container {
 /*    perspective: 1000;*/
   background: transparent;
-  height: 280.48px !important;
+  height: 120.32px !important;
   
-}
+}/*280.48p*/
 
 .flip-container:hover .flipper,
 .flip-container.hover .flipper {
@@ -80,7 +80,7 @@ padding-right: 0;
 }
 
 .hexagons {
-  width:1100px;
+  width:882px;
   letter-spacing:0;
   font-size:0;
   margin: 0 auto;
@@ -88,10 +88,10 @@ padding-right: 0;
 
 .hexagon-holder{
   position: relative;
-  margin-left: 21.5px;
-  margin-right: 21.5px;
-  width: 226px; 
-  height: 130.48px;
+  margin-left: 14.5px;
+  margin-right: 14.5px;
+  width: 2160px; 
+  height: 100.48px;
   display: inline-block;
   letter-spacing:0;
   font-size:0;
@@ -99,8 +99,8 @@ padding-right: 0;
 
 .hexagon {
   position: relative;
-  width: 226px; 
-  height: 130.48px;
+  width: 120px; 
+  height: 100.32px;
   background-size: auto 258.6529px;
   background-position: center;
   display:inline-block;
@@ -109,8 +109,8 @@ padding-right: 0;
 
 .hexagon1 {
   position: relative;
-  width: 226px; 
-  height: 130.48px;
+  width: 120px; 
+  height: 100.32px;
   background-image: url(http://cdn.akamai.steamstatic.com/steamcommunity/public/images/avatars/ef/ef606a5b68ac0d93d1a9a0b64b6ae98af00d1905_full.jpg);
   background-size: auto 258.6529px;
   background-position: center;
@@ -120,8 +120,8 @@ padding-right: 0;
 
 .hexagon2 {
   position: relative;
-  width: 226px; 
-  height: 130.48px;
+  width: 120; 
+  height: 100.32px;
   background-image: url(http://cdn.akamai.steamstatic.com/steamcommunity/public/images/avatars/ef/ef606a5b68ac0d93d1a9a0b64b6ae98af00d1905_full.jpg);
   background-size: auto 258.6529px;
   background-position: center;
@@ -131,8 +131,8 @@ padding-right: 0;
 
 .hexagon3 {
   position: relative;
-  width: 226px; 
-  height: 130.48px;
+  width: 120px; 
+  height: 100.32px;
   background-image: url(http://cdn.akamai.steamstatic.com/steamcommunity/public/images/avatars/ef/ef606a5b68ac0d93d1a9a0b64b6ae98af00d1905_full.jpg);
   background-size: auto 258.6529px;
   background-position: center;
@@ -142,8 +142,8 @@ padding-right: 0;
 
 .hexagon4 {
   position: relative;
-  width: 226px; 
-  height: 130.48px;
+  width: 120; 
+  height: 100.32px;
   background-image: url(http://cdn.akamai.steamstatic.com/steamcommunity/public/images/avatars/ef/ef606a5b68ac0d93d1a9a0b64b6ae98af00d1905_full.jpg);
   background-size: auto 258.6529px;
   background-position: center;
@@ -155,8 +155,8 @@ padding-right: 0;
 .hexagon .hexBottom {
   position: absolute;
   z-index: 1;
-  width: 160.81px;
-  height: 160.81px;
+  width: 88.81px;
+  height: 88.81px;
   overflow: hidden;
   -webkit-transform: scaleY(0.5774) rotate(-45deg);
   -ms-transform: scaleY(0.5774) rotate(-45deg);
