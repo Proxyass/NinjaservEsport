@@ -1,0 +1,17 @@
+<section class="mt-4">
+  <% flash.each do |key, value| %>
+  <div id="error_explanation" class="alert alert-<%=key%>" role="alert">
+    <p>
+      <%= value %>
+    </p>
+  </div>
+  <% end %>
+  <div class="jumbotron">
+    <h1 class="display-4">Would you really want to delete the </br>'<%= @user.firstname.capitalize %>' user ?</h1>
+    <p class="lead">Dude, it's dangerous...</p>
+    <hr class="my-4">
+    <p class="lead">
+      <%= link_to "Delete this user", admin_user_path(@user.id), method: :delete, class: "btn btn-danger btn-lg"  %>
+    </p>
+  </div>
+</section>

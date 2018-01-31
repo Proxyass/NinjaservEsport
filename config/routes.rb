@@ -17,6 +17,11 @@ Rails.application.routes.draw do
       get 'delete'
     end
     resources :games, except: [:index, :show]
+    resources :users do
+      get 'delete'
+      patch 'set_admin'
+      patch 'unset_admin'
+    end
   end
   # -------------
 

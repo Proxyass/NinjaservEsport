@@ -1,0 +1,48 @@
+<section class="mt-4">
+  <% flash.each do |key, value| %>
+  <div id="error_explanation" class="alert alert-<%=key%>" role="alert">
+    <p>
+      <%= value %>
+    </p>
+  </div>
+  <% end %>
+</section>
+<section class="mt-4">
+  <table class="table table-striped">
+    <thead class="thead-dark">
+      <tr>
+        <th scope="col" class="text-left">#</th>
+        <th scope="col" class="text-center">Firstname</th>
+        <th scope="col" class="text-center">Lastname</th>
+        <th scope="col" class="text-center">Admin</th>
+        <th scope="col" class="text-right">Action</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @users.each do |user| %>
+      <tr>
+        <th class="text-left" scope="row"><%= user.id %></th>
+        <td class="text-center"><%= user.firstname.capitalize %></td>
+        <td class="text-center"><%= user.lastname.capitalize %></td>
+        <td class="text-center">
+          <% if user.admin %>
+          <span class="badge badge-info"><%= user.admin %></span>
+          <% else %>
+          <span class="badge badge-secondary"><%= user.admin %></span>
+          <% end %>
+        </td>
+        <td class="text-right">
+          <%= link_to 'Promote admin', admin_user_set_admin_path(user.id),method: :patch, :class => "btn btn-sm btn-primary" %>
+          <% if user == current_logged_user %>
+          <%= link_to 'Downgrade admin', admin_user_unset_admin_path(user.id),method: :patch, :class => "btn btn-sm btn-warning disabled" %>
+          <%= link_to 'Delete', admin_user_delete_path(user.id),method: :delete, :class => "btn btn-sm btn-danger disabled" %>
+          <% else %>
+          <%= link_to 'Downgrade admin', admin_user_unset_admin_path(user.id),method: :patch, :class => "btn btn-sm btn-warning" %>
+          <%= link_to 'Delete', admin_user_delete_path(user.id), :class => "btn btn-sm btn-danger" %>
+          <% end %>
+        </td>
+      </tr>
+      <% end %>
+    </tbody>
+  </table>
+</section>
