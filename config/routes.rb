@@ -24,6 +24,7 @@ Rails.application.routes.draw do
       patch 'set_admin'
       patch 'unset_admin'
     end
+    resources :news
   end
   # -------------
 

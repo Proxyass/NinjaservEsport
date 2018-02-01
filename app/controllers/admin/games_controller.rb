@@ -54,7 +54,6 @@ class Admin::GamesController < Admin::BaseAdminController
     end
   end
 
-
   def game_params
     params.require(:game).permit(:name, :description, :team_based, :image_url)
   end

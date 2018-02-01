@@ -1,5 +1,5 @@
 class User < ApplicationRecord
-  # Validation
+  # Validations
   validates :firstname, :lastname, :mail, :password, :password_confirmation, :salt, presence: true
   validates :password, confirmation: true
   validates :password, :length => { minimum: 7 }
@@ -11,6 +11,11 @@ class User < ApplicationRecord
   before_create :change_password
   before_save :set_lowercase
   # -----
+
+  # Relations
+  has_many :news
+  # -----
+
 
   def set_lowercase
     self.firstname = self.firstname.downcase

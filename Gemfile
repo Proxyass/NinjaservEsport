@@ -36,6 +36,7 @@ gem 'jbuilder', '~> 2.5'
 gem 'bootstrap', '~> 4.0.0.beta2.1'
 gem 'popper_js'
 gem 'jquery-rails'
+gem 'tinymce-rails'
 
 
 group :development, :test do
@@ -58,7 +59,6 @@ group :development do
   gem 'capistrano3-puma'
   gem 'capistrano-bundler'
   gem 'capistrano-rvm'
-  gem 'mysql2'
 end
 
 group :preproduction, :production do

@@ -1,0 +1,39 @@
+<%= tinymce_assets %>
+<%= form_for [:admin, @news] do |f| %>
+<% if f.object.errors.any? %>
+<div class="form-group">
+  <div class="alert alert-danger" role="alert">
+    <div id="clear"></div>
+    <div id="error">
+      <p class="title">
+        <%= t 'activemodel.errors.messages', count: f.object.errors.count %>
+      </p>
+      <ul>
+        <% f.object.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+        <% end %>
+      </ul>
+    </div>
+    <div id="clear"></div>
+  </div>
+</div>
+<% end %>
+<div class="form-group">
+  <%= label_tag 'title', "News title" %>
+  <%= f.text_field :title, class: 'form-control'%>
+</div>
+<div class="form-group">
+  <%= label_tag 'caption', "News caption" %>
+  <%= f.text_field :caption, class: 'form-control'%>
+</div>
+<div class="form-group">
+  <%= label_tag 'content', "News content" %>
+  <%= f.text_area :content, :class => "tinymce" %>
+</div>
+<div class="form-group">
+  <%= f.label "Visible" %>
+  <%= f.check_box :visible, class: 'form-control'%>
+</div>
+<button type="submit" class="btn btn-primary">Create</button>
+<% end %>
+<%= tinymce %>
