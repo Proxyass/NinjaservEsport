@@ -11,6 +11,10 @@ Rails.application.routes.draw do
   resources :users
   # -------------
 
+  ## News
+  resources :news, only: [:index, :show] , param: :slug
+  # -------------
+
   ## Administration area
   namespace :admin do
     resources :teams, except: [:index, :show] do
@@ -24,7 +28,9 @@ Rails.application.routes.draw do
       patch 'set_admin'
       patch 'unset_admin'
     end
-    resources :news
+    resources :news do
+      get 'delete'
+    end
   end
   # -------------
 

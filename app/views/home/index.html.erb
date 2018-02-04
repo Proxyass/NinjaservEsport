@@ -30,16 +30,29 @@
 <!-- #### -->
 
 <!-- News -->
-<section class="border mt-1">
+<section class="mt-1">
   <div class="row">
+    <% @news.each do |news| %>
     <div class="col-md-4">
-      One of three columns
+      <div class="card" style="width: 100%;">
+        <img class="card-img-top" src="..." alt="Card image cap">
+        <div class="card-body">
+          <h5 class="card-title"><%= news.title.capitalize%></h5>
+          <p class="card-text"><%= news.caption.capitalize%></p>
+          <%= link_to 'Read it', news_path(news.beauty_url), class: "btn btn-primary" %>
+        </div>
+      </div>
     </div>
+    <% end %>
     <div class="col-md-4">
-      One of three columns
-    </div>
-    <div class="col-md-4">
-      One of three columns
+      <div class="card" style="width: 100%;">
+        <img class="card-img-top" src="..." alt="Card image cap">
+        <div class="card-body">
+          <h5 class="card-title">Older news...</h5>
+          <p class="card-text"></p>
+          <%= link_to 'See', news_index_path, class: "btn btn-primary" %>
+        </div>
+      </div>
     </div>
   </div>
 </section>
@@ -47,7 +60,7 @@
 
 <!-- Sponsors -->
 <section class="border mt-1">
-sponsor img
+  sponsor img
 </section>
 <!-- #### -->
 

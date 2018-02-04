@@ -1,0 +1,16 @@
+<section class="mt-1">
+  <div class="row">
+    <% @news.each do |news| %>
+    <div class="col-md-12">
+      <div class="card" style="width: 100%;">
+        <img class="card-img-top" src="..." alt="Card image cap">
+        <div class="card-body">
+          <h5 class="card-title"><%= news.title.capitalize%></h5>
+          <p class="card-text"><%= news.caption.capitalize%></p>
+          <%= link_to 'Read it', news_path(news.beauty_url), class: "btn btn-primary" %>
+        </div>
+      </div>
+    </div>
+    <% end %>
+  </div>
+</section>

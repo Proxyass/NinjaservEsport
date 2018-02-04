@@ -1,4 +1,3 @@
-<%= tinymce_assets %>
 <%= form_for [:admin, @news] do |f| %>
 <% if f.object.errors.any? %>
 <div class="form-group">
@@ -25,6 +24,12 @@
 <div class="form-group">
   <%= label_tag 'caption', "News caption" %>
   <%= f.text_field :caption, class: 'form-control'%>
+  <small class="form-text text-muted">Short text displayed under the news title on the home page</small>
+</div>
+<div class="form-group">
+  <%= label_tag 'beauty_url', "News pretty url" %>
+  <%= f.text_field :beauty_url, class: 'form-control', placeholder: "whoa-such-a-good-new"%>
+  <small class="form-text text-muted">Url used to access this news. Example: /news/<span class="badge badge-info">whoa-such-a-good-new</span></small>
 </div>
 <div class="form-group">
   <%= label_tag 'content', "News content" %>
@@ -36,4 +41,4 @@
 </div>
 <button type="submit" class="btn btn-primary">Create</button>
 <% end %>
-<%= tinymce %>
+<%= tinymce :default %>
