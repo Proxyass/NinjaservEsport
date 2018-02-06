@@ -29,5 +29,5 @@
   <%= label_tag 'description', "Team\'s description" %>
   <%= f.text_area :description, class: 'form-control'%>
 </div>
-<button type="submit" class="btn btn-primary">Create</button>
+<%= f.submit ( f.object.new_record? ? "Create" : "Update"), class: "btn btn-primary" %>
 <% end %>

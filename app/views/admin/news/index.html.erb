@@ -16,6 +16,7 @@
           <th scope="col" class="text-left">#</th>
           <th scope="col" class="text-left">Title</th>
           <th scope="col" class="text-center">Caption</th>
+          <th scope="col" class="text-center">Visible</th>
           <th scope="col" class="text-right">Action</th>
         </tr>
       </thead>
@@ -25,6 +26,13 @@
           <th class="text-left align-middle" scope="row"><%= news.id %></th>
           <td class="text-left align-middle"><%= news.title.capitalize %></td>
           <td class="text-left w-50 p-3 align-middle"><%= news.caption.capitalize %></td>
+          <td class="text-center align-middle">
+            <% if news.visible %>
+            <span class="badge badge-info"><%= news.visible %></span>
+            <% else %>
+            <span class="badge badge-secondary"><%= news.visible %></span>
+            <% end %>
+          </td>
           <td class="text-right align-middle">
             <%= link_to 'Edit', edit_admin_news_path(news.id), :class => "btn btn-sm btn-primary" %>
             <%= link_to 'Delete', admin_news_delete_path(news.id), :class => "btn btn-sm btn-danger" %>

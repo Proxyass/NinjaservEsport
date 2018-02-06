@@ -1,5 +1,9 @@
 class Admin::TeamsController < Admin::BaseAdminController
-  before_action :team_must_exist,   except: [:new, :create]
+  before_action :team_must_exist,   except: [:index, :new, :create]
+
+  def index
+    @teams = Team.all
+  end
 
   def new
     @team = Team.new
@@ -10,10 +14,24 @@ class Admin::TeamsController < Admin::BaseAdminController
     @team = Team.new(team_params)
     if @team.save
       flash[:success] = "Team "+@team.name.capitalize+" successfully created."
-      redirect_to new_admin_team_path
+      redirect_to admin_teams_path
     else
       flash.now[:danger] =  "Failed to create "+@team.name + ", "+@team.errors.full_messages.to_sentence+"."
       render 'new'
+    end
+  end
+
+  def edit
+    @games = Game.all
+  end
+
+  def update
+    if @team.update(team_params)
+      flash[:success] = "Team "+@team.name.capitalize+" successfully updated."
+      redirect_to admin_teams_path
+    else
+      flash[:danger] =  "Failed to update "+@team.name + ", "+@team.errors.full_messages.to_sentence+"."
+      redirect_to edit_admin_team_path(@team.id)
     end
   end
 
@@ -23,7 +41,7 @@ class Admin::TeamsController < Admin::BaseAdminController
   def destroy
     if @team.destroy
       flash[:success] = "Team "+@team.name.capitalize+" successfully deleted."
-      redirect_to teams_path
+      redirect_to admin_teams_path
     else
       flash.now[:danger] =  "Failed to delete "+@team.name + ", "+@team.errors.full_messages.to_sentence+"."
       render 'delete'
