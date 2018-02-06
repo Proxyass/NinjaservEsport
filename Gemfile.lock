@@ -89,6 +89,8 @@ GEM
     coffee-script-source (1.12.2)
     concurrent-ruby (1.0.5)
     crass (1.0.3)
+    elastic-apm (0.3.0)
+      activesupport (>= 3.0.0)
     erubi (1.7.0)
     execjs (2.7.0)
     ffi (1.9.18)
@@ -230,6 +232,7 @@ DEPENDENCIES
   capistrano3-puma
   capybara (~> 2.13)
   coffee-rails (~> 4.2)
+  elastic-apm
   jbuilder (~> 2.5)
   jquery-rails
   listen (>= 3.0.5, < 3.2)
