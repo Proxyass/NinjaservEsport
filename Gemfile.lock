@@ -1,3 +1,11 @@
+GIT
+  remote: https://github.com/elastic/apm-agent-ruby.git
+  revision: 10e4989ff5edf473226ed917e2acb6170526e277
+  branch: master
+  specs:
+    elastic-apm (0.3.0)
+      activesupport (>= 3.0.0)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -89,11 +97,9 @@ GEM
     coffee-script-source (1.12.2)
     concurrent-ruby (1.0.5)
     crass (1.0.3)
-    elastic-apm (0.3.0)
-      activesupport (>= 3.0.0)
     erubi (1.7.0)
     execjs (2.7.0)
-    ffi (1.9.18)
+    ffi (1.9.21)
     globalid (0.4.1)
       activesupport (>= 4.2.0)
     i18n (0.9.3)
@@ -232,7 +238,7 @@ DEPENDENCIES
   capistrano3-puma
   capybara (~> 2.13)
   coffee-rails (~> 4.2)
-  elastic-apm
+  elastic-apm!
   jbuilder (~> 2.5)
   jquery-rails
   listen (>= 3.0.5, < 3.2)
