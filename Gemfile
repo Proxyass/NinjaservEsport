@@ -37,7 +37,6 @@ gem 'bootstrap', '~> 4.0.0.beta2.1'
 gem 'popper_js'
 gem 'jquery-rails'
 gem 'tinymce-rails'
-gem 'elastic-apm', :git => 'https://github.com/elastic/apm-agent-ruby.git', :branch => 'master'
 
 
 group :development, :test do
@@ -64,6 +63,7 @@ end
 
 group :preproduction, :production do
   gem 'mysql2'
+  gem 'elastic-apm', :git => 'https://github.com/elastic/apm-agent-ruby.git'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
