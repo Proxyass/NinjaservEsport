@@ -39,7 +39,7 @@
         <div class="card-body">
           <h5 class="card-title"><%= news.title.capitalize%></h5>
           <p class="card-text"><%= news.caption.capitalize%></p>
-          <%= link_to 'Read it', news_path(news.beauty_url), class: "button-index-news" %>
+          <%= link_to 'Read it', news_path(news.beauty_url), class: "button button3" %>
         </div>
       </div>
     </div>
@@ -50,7 +50,7 @@
         <div class="card-body">
           <h5 class="card-title">Older news...</h5>
           <p class="card-text"></p>
-          <%= link_to 'See', news_index_path, class: "button-index-news" %>
+          <%= link_to 'See', news_index_path, class: "button button3s" %>
         </div>
       </div>
     </div>
