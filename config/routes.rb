@@ -19,6 +19,7 @@ Rails.application.routes.draw do
   namespace :admin do
     resources :teams, except: [:show] do
       get 'delete'
+      resources :team_members, only: [:index, :new, :create,:delete, :destroy]
     end
     resources :games, except: [:show] do
       get 'delete'

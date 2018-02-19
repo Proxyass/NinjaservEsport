@@ -1,0 +1,11 @@
+<section class="mt-4">
+  <% flash.each do |key, value| %>
+  <div id="error_explanation" class="alert alert-<%=key%>" role="alert">
+    <p>
+      <%= value %>
+    </p>
+  </div>
+  <% end %>
+  <h1>Add team members</h1>
+  <%= render 'form_new' %>
+</section>

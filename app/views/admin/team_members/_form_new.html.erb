@@ -1,0 +1,28 @@
+<%= form_tag admin_team_team_members_path do %>
+<div class="form-group">
+  <%= label_tag 'user', "Team\'s member" %>
+  <table class="table">
+    <thead class="thead-dark">
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Firstname</th>
+        <th scope="col">Lastname</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @users.each do |user| %>
+      <tr>
+        <th scope="row">
+          <div>
+            <%= check_box_tag "team_member[user_ids][]", user.id%>
+          </div>
+        </th>
+        <td><%= user.firstname.capitalize %></td>
+        <td><%= user.lastname.capitalize %></td>
+      </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>
+<%= submit_tag "Create", class: "btn btn-primary" %>
+<% end %>
