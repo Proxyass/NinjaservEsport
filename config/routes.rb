@@ -17,6 +17,7 @@ Rails.application.routes.draw do
 
   ## Administration area
   namespace :admin do
+    get    '/'                            => 'home#index'
     resources :teams, except: [:show] do
       get 'delete'
       resources :team_members, only: [:index, :new, :create,:delete, :destroy]

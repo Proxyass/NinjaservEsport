@@ -1,0 +1,50 @@
+<section class="mt-4">
+  <% flash.each do |key, value| %>
+  <div id="error_explanation" class="alert alert-<%=key%>" role="alert">
+    <p>
+      <%= value %>
+    </p>
+  </div>
+  <% end %>
+</section>
+<h1>Administration area</h1>
+<section class="mt-4" style="height: 100vh;">
+  <div class="row" style="height:100%;">
+    <div class="col-sm">
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title">News</h5>
+          <h6 class="card-subtitle mb-2 text-muted">News administration</h6>
+          <%= link_to "GO", admin_news_index_path,class: "btn btn-primary"%>
+        </div>
+      </div>
+    </div>
+    <div class="col-sm">
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title">Users</h5>
+          <h6 class="card-subtitle mb-2 text-muted">Users administration</h6>
+          <%= link_to "GO", admin_users_path,class: "btn btn-primary"%>
+        </div>
+      </div>
+    </div>
+    <div class="col-sm">
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title">Teams</h5>
+          <h6 class="card-subtitle mb-2 text-muted">Teams administration</h6>
+          <%= link_to "GO", admin_teams_path,class: "btn btn-primary"%>
+        </div>
+      </div>
+    </div>
+    <div class="col-sm">
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title">Games</h5>
+          <h6 class="card-subtitle mb-2 text-muted">Games administration</h6>
+          <%= link_to "GO", admin_games_path,class: "btn btn-primary"%>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
