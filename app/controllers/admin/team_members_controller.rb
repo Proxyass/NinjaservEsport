@@ -1,9 +1,9 @@
 class Admin::TeamMembersController < Admin::BaseAdminController
   before_action :team_must_exist
-  before_action :team_member_must_exist,  except: [:new, :create]
+  before_action :team_member_must_exist,  except: [:index, :new, :create]
 
   def index
-    @members = @team.users
+    redirect_to new_admin_team_team_member_path(@team.id)
   end
 
   def new
