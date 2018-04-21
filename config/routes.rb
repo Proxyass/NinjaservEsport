@@ -25,6 +25,9 @@ Rails.application.routes.draw do
     resources :games, except: [:show] do
       get 'delete'
     end
+    resources :team_member_roles, except: [:show] do
+      get 'delete'
+    end
     resources :users do
       get 'delete'
       patch 'set_admin'

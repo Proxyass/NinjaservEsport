@@ -8,30 +8,22 @@ class Admin::TeamMembersController < Admin::BaseAdminController
 
   def new
     @users = User.all
+    @roles = TeamMemberRole.all
   end
 
   def create
-    team_members_id = team_member_params[:user_ids]
+    member = TeamMember.new
     begin
       TeamMember.transaction do
-        team_members_id.each do |member_id|
-          member = TeamMember.new
-          member.user = User.find_by(id: member_id)
-          member.team = @team
-          member.save!
-        end
-        names = []
-        @team.team_members.each do |member|
-          names << member.user.firstname.capitalize
-        end
-        flash[:success] = names.join(", ")+" successfully added to "+@team.name.capitalize
+        member.user = User.find_by(id: team_member_params[:id])
+        member.team = @team
+        member.team_member_role = TeamMemberRole.find_by(id: team_member_params[:role_id])
+        member.save!
+        flash[:success] = member.user.firstname+" successfully added to "+@team.name.capitalize
       end
-    rescue ActiveRecord::RecordInvalid => invalid
-      if invalid.record.user
-        flash[:danger] = invalid.record.user.firstname.capitalize+" "+invalid.record.errors.messages[:user].to_sentence
-      else
-        flash[:danger] = "Error while adding members to "+@team.name.capitalize
-      end
+    rescue
+      member.validate
+      flash[:danger] = member.user.firstname.capitalize+" "+member.errors.full_messages.to_sentence
     end
     redirect_to new_admin_team_team_member_path(@team.id)
   end
@@ -42,7 +34,7 @@ class Admin::TeamMembersController < Admin::BaseAdminController
   def destroy
     if @member.destroy
       flash[:success] = "User "+@member.user.firstname.capitalize+" successfully deleted from team '"+@member.team.name.capitalize+"''"
-      redirect_to teams_path
+      redirect_to admin_team_team_members_path
     else
       flash.now[:danger] =  "Failed to delete "+@member.user.firstname + ", "+@member.errors.full_messages.to_sentence+"."
       render 'delete'
@@ -64,7 +56,7 @@ class Admin::TeamMembersController < Admin::BaseAdminController
   end
 
   def team_member_params
-    params.require(:team_member).permit(:user_ids => [])
+    params.require(:team_member).permit(:id, :role_id)
   end
 
 end

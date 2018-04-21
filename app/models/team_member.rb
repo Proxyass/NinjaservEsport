@@ -7,5 +7,6 @@ class TeamMember < ApplicationRecord
   # Relations
   belongs_to :team
   belongs_to :user
+  belongs_to :team_member_role
   # -----
 end

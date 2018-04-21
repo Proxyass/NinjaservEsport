@@ -1,0 +1,35 @@
+<section class="mt-4">
+  <% flash.each do |key, value| %>
+  <div id="error_explanation" class="alert alert-<%=key%>" role="alert">
+    <p>
+      <%= value %>
+    </p>
+  </div>
+  <% end %>
+</section>
+<section class="mt-4">
+  <%= render 'role_menu' %>
+  <div class="table-responsive">
+    <table class="table table-striped">
+      <thead class="thead-dark">
+        <tr>
+          <th scope="col" class="text-left">#</th>
+          <th scope="col" class="text-left">Name</th>
+          <th scope="col" class="text-right">Action</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @roles.each do |role| %>
+        <tr>
+          <th class="text-left align-middle" scope="row"><%= role.id %></th>
+          <td class="text-left align-middle"><%= role.name.capitalize %></td>
+          <td class="text-right align-middle">
+            <%= link_to 'Edit', edit_admin_team_member_role_path(role.id), :class => "btn btn-sm btn-primary" %>
+            <%= link_to 'Delete', admin_team_member_role_delete_path(role.id), :class => "btn btn-sm btn-danger" %>
+          </td>
+        </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
+</section>

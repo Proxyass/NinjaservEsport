@@ -61,4 +61,12 @@ class User < ApplicationRecord
     return false
   end
 
+  def in_team(team)
+    team_member = TeamMember.find_by(user: self, team: team)
+    if team_member
+      return team_member
+    end
+    return false
+  end
+
 end

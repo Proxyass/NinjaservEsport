@@ -1,0 +1,25 @@
+<%= form_for [:admin, @role] do |f| %>
+<% if f.object.errors.any? %>
+<div class="form-group">
+  <div class="alert alert-danger" role="alert">
+    <div id="clear"></div>
+    <div id="error">
+      <p class="title">
+        <%= t 'activemodel.errors.messages', count: f.object.errors.count %>
+      </p>
+      <ul>
+        <% f.object.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+        <% end %>
+      </ul>
+    </div>
+    <div id="clear"></div>
+  </div>
+</div>
+<% end %>
+<div class="form-group">
+  <%= label_tag 'name', "Role\'s name" %>
+  <%= f.text_field :name, class: 'form-control'%>
+</div>
+<%= f.submit ( f.object.new_record? ? "Create" : "Update"), class: "btn btn-primary" %>
+<% end %>

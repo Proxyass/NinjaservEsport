@@ -1,0 +1,20 @@
+<%= form_tag admin_team_team_member_path(@team.id, team_member.id), :method => :delete do |f| %>
+<tr>
+  <td>
+    <%= user.id %>
+    <%= hidden_field(:team_member, :id, :value => user.id) %>
+  </td>
+  <td><%= user.firstname.capitalize %></td>
+  <td><%= user.lastname.capitalize %></td>
+  <td>
+    <% if team_member.team_member_role %>
+      <%= team_member.team_member_role.name %>
+    <% else %>
+      -
+    <% end %>
+  </td>
+  <td>
+    <%= submit_tag "Kick", class: "btn btn-danger" %>
+  </td>
+</tr>
+<% end %>

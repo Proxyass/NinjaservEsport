@@ -6,6 +6,28 @@
     </p>
   </div>
   <% end %>
-  <h1>Add team members</h1>
-  <%= render 'form_new' %>
+  <h1>Team members</h1>
+  <div class="form-group">
+    <%= label_tag 'user', "Team\'s member" %>
+    <table class="table">
+      <thead class="thead-dark">
+        <tr>
+          <th scope="col">#</th>
+          <th scope="col">Firstname</th>
+          <th scope="col">Lastname</th>
+          <th scope="col">Role</th>
+          <th scope="col">Action</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @users.each do |user| %>
+          <% if !user.in_team(@team) %>
+          <%= render 'form_new', :user => user %>
+          <% else %>
+          <%= render 'form_delete', :user => user, :team_member => user.in_team(@team) %>
+          <% end %>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
 </section>

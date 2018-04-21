@@ -9,8 +9,8 @@
 </section>
 <h1>Administration area</h1>
 <section class="mt-4" style="height: 100vh;">
-  <div class="row" style="height:100%;">
-    <div class="col-sm">
+  <div class="row">
+    <div class="col-sm-4" style="margin-top:1em;">
       <div class="card">
         <div class="card-body">
           <h5 class="card-title">News</h5>
@@ -19,7 +19,7 @@
         </div>
       </div>
     </div>
-    <div class="col-sm">
+    <div class="col-sm-4" style="margin-top:1em;">
       <div class="card">
         <div class="card-body">
           <h5 class="card-title">Users</h5>
@@ -28,7 +28,7 @@
         </div>
       </div>
     </div>
-    <div class="col-sm">
+    <div class="col-sm-4" style="margin-top:1em;">
       <div class="card">
         <div class="card-body">
           <h5 class="card-title">Teams</h5>
@@ -37,7 +37,16 @@
         </div>
       </div>
     </div>
-    <div class="col-sm">
+    <div class="col-sm-4" style="margin-top:1em;">
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title">Team member roles</h5>
+          <h6 class="card-subtitle mb-2 text-muted">Team member roles administration</h6>
+          <%= link_to "GO", admin_team_member_roles_path,class: "btn btn-primary"%>
+        </div>
+      </div>
+    </div>
+    <div class="col-sm-4" style="margin-top:1em;">
       <div class="card">
         <div class="card-body">
           <h5 class="card-title">Games</h5>
