@@ -1,0 +1,50 @@
+<section class="mt-4">
+  <% flash.each do |key, value| %>
+  <div id="error_explanation" class="alert alert-<%=key%>" role="alert">
+    <p>
+      <%= value %>
+    </p>
+  </div>
+  <% end %>
+</section>
+<section class="mt-4">
+  <%= render 'sponsor_menu' %>
+  <div class="table-responsive">
+    <table class="table table-striped">
+      <thead class="thead-dark">
+        <tr>
+          <th scope="col" class="text-left">#</th>
+          <th scope="col" class="text-left">logo</th>
+          <th scope="col" class="text-left">Name</th>
+          <th scope="col" class="text-center">Description</th>
+          <th scope="col" class="text-center">Visibility</th>
+          <th scope="col" class="text-right">Action</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @sponsors.each do |sponsor| %>
+        <tr>
+          <th class="text-left align-middle" scope="row"><%= sponsor.id %></th>
+          <td class="text-left align-middle"><%= image_tag sponsor.logo.url(:thumb) %></td>
+          <td class="text-left align-middle"><%= sponsor.name.capitalize %></td>
+          <td class="text-left w-50 p-3 align-middle"><%= sponsor.description.capitalize %></td>
+          <td class="text-center align-middle">
+            <% if sponsor.visible %>
+            <span class="badge badge-light">Visible</span>
+            <% else %>
+            <span class="badge badge-dark">Hidden</span>
+            <% end %>
+            <% if sponsor.in_header %>
+            <span class="badge badge-info">In Header</span>
+            <% end %>
+          </td>
+          <td class="text-right align-middle">
+            <%= link_to 'Edit', edit_admin_sponsor_path(sponsor.id), :class => "btn btn-sm btn-primary" %>
+            <%= link_to 'Delete', admin_sponsor_delete_path(sponsor.id), :class => "btn btn-sm btn-danger" %>
+          </td>
+        </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
+</section>

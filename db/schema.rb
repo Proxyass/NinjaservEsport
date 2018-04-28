@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180302182825) do
+ActiveRecord::Schema.define(version: 20180428161558) do
 
   create_table "games", force: :cascade do |t|
     t.string "name"
@@ -32,6 +32,20 @@ ActiveRecord::Schema.define(version: 20180302182825) do
     t.string "beauty_url"
     t.string "image_url"
     t.index ["user_id"], name: "index_news_on_user_id"
+  end
+
+  create_table "sponsors", force: :cascade do |t|
+    t.string "name"
+    t.boolean "visible"
+    t.boolean "in_header"
+    t.text "url"
+    t.text "description"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string "logo_file_name"
+    t.string "logo_content_type"
+    t.integer "logo_file_size"
+    t.datetime "logo_updated_at"
   end
 
   create_table "team_member_roles", force: :cascade do |t|

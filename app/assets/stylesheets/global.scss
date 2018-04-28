@@ -26,12 +26,18 @@ html, body{
 }
 
 .button3 {
-    background-color: #6f2e2f; 
-    color: #FFFFFF; 
+    background-color: #6f2e2f;
+    color: #FFFFFF;
     border: 2px solid #6f2e2f;
 }
 
 .button3:hover {
     background-color: #423630;
     color: #FFFFFF;
+}
+
+#sponsor_top_bar{
+  color: #fff;
+  background-color: #212529;
+  border-color: #32383e;
 }

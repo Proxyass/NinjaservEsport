@@ -27,3 +27,5 @@ config/database.yml
 config/secrets.yml
 
 config/elastic_apm.yml
+
+public/system/*

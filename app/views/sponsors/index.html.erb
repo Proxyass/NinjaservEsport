@@ -1,0 +1,23 @@
+<section class="mt-12" style="margin-top:2em;">
+  <% flash.each do |key, value| %>
+  <div id="error_explanation" class="alert alert-<%=key%>" role="alert">
+    <p>
+      <%= value %>
+    </p>
+  </div>
+  <% end %>
+  <div class="row">
+    <% @sponsors.each do |sponsor| %>
+    <div class="col-md-4">
+      <div class="card" style="width: 18rem;">
+        <%= image_tag sponsor.logo.url(:medium), size: "120", style: "margin:auto;padding:1em;" %>
+        <div class="card-body">
+          <h5 class="card-title"><%= sponsor.name.capitalize %></h5>
+          <p class="card-text"><%= sponsor.description.capitalize %></p>
+          <%= link_to "check "+sponsor.name.capitalize, sponsor.url, class: "btn btn-primary", target: "_blank" %>
+        </div>
+      </div>
+    </div>
+    <% end %>
+  </div>
+</section>

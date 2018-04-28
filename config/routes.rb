@@ -15,6 +15,10 @@ Rails.application.routes.draw do
   resources :news, only: [:index, :show] , param: :slug
   # -------------
 
+  ## Sponsors
+  resources :sponsors, only: :index
+  # -------------
+
   ## Administration area
   namespace :admin do
     get    '/'                            => 'home#index'
@@ -34,6 +38,9 @@ Rails.application.routes.draw do
       patch 'unset_admin'
     end
     resources :news do
+      get 'delete'
+    end
+    resources :sponsors do
       get 'delete'
     end
   end
