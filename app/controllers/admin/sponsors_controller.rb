@@ -55,7 +55,7 @@ class Admin::SponsorsController < Admin::BaseAdminController
   end
 
   def sponsor_params
-    params.require(:sponsor).permit(:name, :description,:url, :visible, :in_header, :logo)
+    params.require(:sponsor).permit(:name, :description,:url, :visible, :in_header, :logo, :homepage)
   end
 
 end

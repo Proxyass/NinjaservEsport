@@ -37,6 +37,9 @@
             <% if sponsor.in_header %>
             <span class="badge badge-info">In Header</span>
             <% end %>
+            <% if sponsor.homepage %>
+            <span class="badge badge-primary">In Homepage</span>
+            <% end %>
           </td>
           <td class="text-right align-middle">
             <%= link_to 'Edit', edit_admin_sponsor_path(sponsor.id), :class => "btn btn-sm btn-primary" %>

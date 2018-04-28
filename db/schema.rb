@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180428161558) do
+ActiveRecord::Schema.define(version: 20180428172252) do
 
   create_table "games", force: :cascade do |t|
     t.string "name"
@@ -46,6 +46,7 @@ ActiveRecord::Schema.define(version: 20180428161558) do
     t.string "logo_content_type"
     t.integer "logo_file_size"
     t.datetime "logo_updated_at"
+    t.boolean "homepage", default: false
   end
 
   create_table "team_member_roles", force: :cascade do |t|

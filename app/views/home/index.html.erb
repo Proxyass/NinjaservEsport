@@ -30,7 +30,7 @@
 <!-- #### -->
 
 <!-- News -->
-<section class="mt-1">
+<section class="mt-1" style="margin-bottom:2em;">
   <div class="row">
     <% @news.each do |news| %>
     <div class="col-md-4">
@@ -59,9 +59,17 @@
 <!-- #### -->
 
 <!-- Sponsors -->
-<section class="border mt-1">
-  sponsor img
-</section>
+<% if @sponsors.count > 0 %>
+  <section class="mt-1">
+    <div class="row text-center card-like">
+      <% @sponsors.each do |sponsor| %>
+      <div class="col-md-3" style="margin:auto;">
+        <%= image_tag sponsor.logo.url(:medium), size: "100", class: "rounded mx-auto d-block" %>
+      </div>
+      <% end %>
+    </div>
+  </section>
+<% end %>
 <!-- #### -->
 
 <!-- Teams scores -->
