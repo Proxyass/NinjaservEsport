@@ -45,7 +45,9 @@
                             </div>
                             <div class="hexText">
                               <span class="badge badge-info"><%= user.firstname.capitalize %> <%= user.lastname.capitalize %></span>
-                              <span class="badge badge-info">Sniper</span>
+                              <% if member.team_member_role %>
+                              <span class="badge badge-info"><%= member.team_member_role.name.capitalize %></span>
+                              <% end %>
                               <ul class="margin0 padding0 no-style hex-socials">
                                 <li class="social-hover"><a href="#"><i class="fa fa-facebook"></i></a></li>
                                 <li class="social-hover"><a href="#"><i class="fa fa-twitter"></i></a></li>
@@ -60,7 +62,9 @@
                       </div>
                       <div class="text-center">
                         <h4><%= user.firstname.capitalize %> <%= user.lastname.capitalize %></h4>
-                        <p class="text-block italic-letters">Sniper of the Team</p>
+                        <% if member.team_member_role %>
+                        <p class="text-block italic-letters"><%= member.team_member_role.name.capitalize %></p>
+                        <% end %>
                         <div class="blue-horizontal-separator"></div>
                       </div>
                     </div>
