@@ -3,7 +3,7 @@
 <nav class="nav justify-content-center nav-justified" id="sponsor_top_bar">
   <% sponsors.each do |sponsor| %>
   <a class="navbar-brand" href="<%= sponsor.url %>" target="_blank">
-    <%= image_tag sponsor.logo.url(:thumb) %>
+    <%= image_tag sponsor.logo.url, height: "30" %>
   </a>
   <% end %>
 </nav>
