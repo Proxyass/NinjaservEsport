@@ -10,7 +10,7 @@
     <% @sponsors.each do |sponsor| %>
     <div class="col-md-4">
       <div class="card" style="width: 18rem;">
-        <%= image_tag sponsor.logo.url(:medium), style: "margin:auto;padding:1em;" %>
+        <%= image_tag sponsor.logo.url,height: "120", style: "margin:auto;padding:1em;" %>
         <div class="card-body">
           <h5 class="card-title"><%= sponsor.name.capitalize %></h5>
           <p class="card-text"><%= sponsor.description.capitalize %></p>
