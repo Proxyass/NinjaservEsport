@@ -19,46 +19,17 @@
           <div class="row">
             <!-- team -->
             <section>
-              <div class="container padding-top96 padding-bottom96" id="teams">
+              <div class="container" id="teams">
                 <div class="row">
-                  <div class="col-md-12 text-center" data-sr='enter bottom move 96px'>
-                    <div class="blue-horizontal-separator padding-top24 margin-bottom24">
-                    </div>
-                  </div>
                   <% team.team_members.each do |member| %>
                   <% user = member.user %>
-                  <div class="clearfix"></div>
                   <div class="container col-lg-12 text-center">
-                    <div class="col-md-12 pad-right" data-sr="enter bottom move 96px wait 0.3s">
-                      <div class="no-pad-lr hexagon-holder flip-container text-left">
-                        <div class="flipper">
-                          <div class="front">
-                            <div class="hexagon hexagon1">
-                              <div class="hexTop"></div>
-                              <div class="hexBottom"></div>
-                            </div>
-                          </div>
-                          <div class="back">
-                            <div class="hexagon-overlay">
-                              <div class="hexTop"></div>
-                              <div class="hexBottom"></div>
-                            </div>
-                            <div class="hexText">
-                              <span class="badge badge-info"><%= user.firstname.capitalize %> <%= user.lastname.capitalize %></span>
-                              <% if member.team_member_role %>
-                              <span class="badge badge-info"><%= member.team_member_role.name.capitalize %></span>
-                              <% end %>
-                              <ul class="margin0 padding0 no-style hex-socials">
-                                <li class="social-hover"><a href="#"><i class="fa fa-facebook"></i></a></li>
-                                <li class="social-hover"><a href="#"><i class="fa fa-twitter"></i></a></li>
-                              </ul>
-                            </div>
-                            <div class="hexagon">
-                              <div class="hexTop"></div>
-                              <div class="hexBottom"></div>
-                            </div>
-                          </div>
-                        </div>
+                      <div>
+                        <% if user.avatar.present? %>
+                          <%= image_tag user.avatar.url, height: "150", class: "rounded mx-auto d-block" %>
+                        <% else %>
+                          <%= image_tag "http://cdn.akamai.steamstatic.com/steamcommunity/public/images/avatars/ef/ef606a5b68ac0d93d1a9a0b64b6ae98af00d1905_full.jpg", height: "150", class: "rounded mx-auto d-block" %>
+                        <% end %>
                       </div>
                       <div class="text-center">
                         <h4><%= user.firstname.capitalize %> <%= user.lastname.capitalize %></h4>

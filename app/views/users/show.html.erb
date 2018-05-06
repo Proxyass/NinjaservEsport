@@ -1,5 +1,15 @@
 <section class="mt-4">
   <div class="text-center">
+    <% flash.each do |key, value| %>
+    <div id="error_explanation" class="alert alert-<%=key%>" role="alert">
+      <p>
+        <%= value %>
+      </p>
+    </div>
+    <% end %>
+    <% if current_logged_user.avatar.present? %>
+    <%= image_tag current_logged_user.avatar.url, height: "150", class: "rounded mx-auto d-block" %>
+    <% end %>
     <h1>Hi <%= current_logged_user.firstname.capitalize %></h1>
     <blockquote class="blockquote text-center">
       <p class="mb-0"><%= current_logged_user.firstname.capitalize %> <%= current_logged_user.lastname.capitalize %></p>
@@ -8,5 +18,6 @@
       <span class="badge badge-info">admin</span>
       <% end %>
     </blockquote>
+    <%= link_to "Edit my profil", edit_user_path(current_logged_user.id), class: "btn btn-sx btn-primary" %>
   </div>
 </section>

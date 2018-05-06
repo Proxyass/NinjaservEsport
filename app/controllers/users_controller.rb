@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-  before_action :must_be_proprietary, only: [:edit, :update, :show]
+  before_action :must_be_proprietary, only:   [:edit, :update, :show]
 
   def new
     @user = User.new
@@ -18,11 +18,30 @@ class UsersController < ApplicationController
   end
 
   def show
-    
+  end
+
+  def edit
+  end
+
+  def update
+    if @user.update(user_params)
+      flash[:success] = "Profil successfully updated."
+      redirect_to user_path(@user.id)
+    else
+      flash[:danger] =  "Failed to update "+@user.firstname + ", "+@user.errors.full_messages.to_sentence+"."
+      redirect_to edit_user_path(@user.id)
+    end
+  end
+
+  def must_be_proprietary
+    @user = User.find_by(id: params[:user_id]) || User.find_by(id: params[:id])
+    if @user != current_logged_user
+      render_403
+    end
   end
 
   def user_params
-    params.require(:user).permit(:firstname, :lastname, :mail, :password, :password_confirmation)
+    params.require(:user).permit(:firstname, :lastname, :mail, :avatar, :password, :password_confirmation)
   end
 
 end

@@ -1,5 +1,8 @@
 class User < ApplicationRecord
+  has_attached_file :avatar, styles: { medium: "300x300>", thumb: "100x100>" }
   # Validations
+  validates_attachment_content_type :avatar, content_type: /\Aimage\/.*\z/
+  validates_with AttachmentSizeValidator, attributes: :avatar, less_than: 2.megabytes
   validates :firstname, :lastname, :mail, :password, :password_confirmation, :salt, presence: true
   validates :password, confirmation: true
   validates :password, :length => { minimum: 7 }
