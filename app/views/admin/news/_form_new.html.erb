@@ -43,4 +43,4 @@
 </div>
 <%= f.submit ( f.object.new_record? ? "Create" : "Update"), class: "btn btn-primary" %>
 <% end %>
-<%= tinymce :default %>
+<%= tinymce :default, :uploadimage_hint => @news.to_json %>

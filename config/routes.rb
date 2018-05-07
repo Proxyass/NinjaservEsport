@@ -19,6 +19,10 @@ Rails.application.routes.draw do
   resources :sponsors, only: :index
   # -------------
 
+  ## TinyMCE assets
+  post '/tinymce_assets'                  => 'admin/tinymce_assets#create'
+  # -------------
+
   ## Administration area
   namespace :admin do
     get    '/'                            => 'home#index'

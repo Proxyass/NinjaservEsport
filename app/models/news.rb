@@ -1,12 +1,12 @@
 class News < ApplicationRecord
   # Validation
-  #validates :title, :content, :beauty_url, :image_url, presence: true
   validates :title, :content, :beauty_url, presence: true
   validates :beauty_url, uniqueness: true
   # -----
 
   # Relations
   belongs_to :user
+  has_many :news_assets, dependent: :delete_all
   # -----
 
   # Hooks

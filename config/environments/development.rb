@@ -47,6 +47,8 @@ Rails.application.configure do
 
   config.web_console.whiny_requests = false
 
+  config.action_controller.asset_host = 'http://192.168.97.133:3000'
+
   # Raises error for missing translations
   # config.action_view.raise_on_missing_translations = true
 

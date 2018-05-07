@@ -14,7 +14,7 @@ class Admin::NewsController < Admin::BaseAdminController
     @news.user = current_logged_user
     if @news.save
       flash[:success] = "News "+@news.title.capitalize+" successfully created."
-      redirect_to new_admin_news_path
+      redirect_to admin_news_index_path
     else
       flash.now[:danger] =  "Failed to create "+@news.title + ", "+@news.errors.full_messages.to_sentence+"."
       render 'new'
@@ -40,7 +40,7 @@ class Admin::NewsController < Admin::BaseAdminController
   def destroy
     if @news.destroy
       flash[:success] = "Team "+@news.title.capitalize+" successfully deleted."
-      redirect_to news_path
+      redirect_to admin_news_index_path
     else
       flash.now[:danger] =  "Failed to delete "+@news.title + ", "+@news.errors.full_messages.to_sentence+"."
       render 'delete'

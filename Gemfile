@@ -37,6 +37,7 @@ gem 'bootstrap', '~> 4.0.0.beta2.1'
 gem 'popper_js'
 gem 'jquery-rails'
 gem 'tinymce-rails'
+gem 'tinymce-rails-imageupload', github: 'PerfectlyNormal/tinymce-rails-imageupload'
 gem "paperclip", "~> 6.0.0"
 
 

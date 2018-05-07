@@ -1,4 +1,12 @@
 GIT
+  remote: https://github.com/PerfectlyNormal/tinymce-rails-imageupload.git
+  revision: dd7ba5d2fcc088ed8053a7ca54b304852dee741a
+  specs:
+    tinymce-rails-imageupload (4.0.17.beta.3)
+      railties (>= 3.2, < 6)
+      tinymce-rails (~> 4.0)
+
+GIT
   remote: https://github.com/elastic/apm-agent-ruby.git
   revision: ee915c09452df82e0eae9967a7cc9b66d4859cfe
   specs:
@@ -266,6 +274,7 @@ DEPENDENCIES
   spring-watcher-listen (~> 2.0.0)
   sqlite3
   tinymce-rails
+  tinymce-rails-imageupload!
   turbolinks (~> 5)
   tzinfo-data
   uglifier (>= 1.3.0)

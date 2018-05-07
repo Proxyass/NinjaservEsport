@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180502175618) do
+ActiveRecord::Schema.define(version: 20180506152733) do
 
   create_table "games", force: :cascade do |t|
     t.string "name"
@@ -32,6 +32,17 @@ ActiveRecord::Schema.define(version: 20180502175618) do
     t.string "beauty_url"
     t.string "image_url"
     t.index ["user_id"], name: "index_news_on_user_id"
+  end
+
+  create_table "news_assets", force: :cascade do |t|
+    t.string "file_file_name"
+    t.string "file_content_type"
+    t.integer "file_file_size"
+    t.datetime "file_updated_at"
+    t.integer "news_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["news_id"], name: "index_news_assets_on_news_id"
   end
 
   create_table "sponsors", force: :cascade do |t|

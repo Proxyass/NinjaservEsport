@@ -1,2 +1,7 @@
 default:
   selector: textarea.tinymce
+  plugins:
+    - uploadimage
+  relative_urls: false
+  remove_script_host: true
+  document_base_url: <%= Rails.application.config.action_controller.asset_host %>
