@@ -24,6 +24,12 @@ class UsersController < ApplicationController
   end
 
   def update
+    if user_params.has_key?(:password) && user_params.has_key?(:password_confirmation)
+      @user.password = user_params["password"]
+      @user.password_confirmation = user_params["password_confirmation"]
+      @user.gen_token_and_salt
+      @user.change_password(@user.password)
+    end
     if @user.update(user_params)
       flash[:success] = "Profil successfully updated."
       redirect_to user_path(@user.id)
