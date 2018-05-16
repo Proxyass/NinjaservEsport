@@ -64,7 +64,7 @@
     <div class="row text-center card-like">
       <% @sponsors.each do |sponsor| %>
       <div class="col-md-3" style="margin:auto;">
-        <%= image_tag sponsor.logo.url(:medium), class: "rounded mx-auto d-block" %>
+        <%= image_tag sponsor.logo.url, width: "150", class: "rounded mx-auto d-block" %>
       </div>
       <% end %>
     </div>
