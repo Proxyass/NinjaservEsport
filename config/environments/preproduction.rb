@@ -87,6 +87,15 @@ Rails.application.configure do
     config.logger    = ActiveSupport::TaggedLogging.new(logger)
   end
 
+  config.action_mailer.smtp_settings = {
+    :address   => Rails.application.secrets.mail_smtp_srv,
+    :port      => Rails.application.secrets.mail_smtp_port,
+    :user_name => Rails.application.secrets.mail_user,
+    :password  => Rails.application.secrets.mail_user_pwd,
+    :authentication => 'plain',
+    :enable_starttls_auto => true
+  }
+
   # Do not dump schema after migrations.
   config.active_record.dump_schema_after_migration = false
 end

@@ -52,6 +52,8 @@ Rails.application.routes.draw do
 
   ## Static pages
   get     'about_us'                       => 'statics#about_us'
+  get     'contact'                        => 'statics#show_contact'
+  post    'contact'                        => 'statics#contact'
   # -------------
 
   ## Sessions

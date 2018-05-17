@@ -1,0 +1,23 @@
+<section style="margin-top: 2em;">
+  <% flash.each do |key, value| %>
+  <div id="error_explanation" class="alert alert-<%=key%>" role="alert">
+    <p>
+      <%= value %>
+    </p>
+  </div>
+  <% end %>
+  <%= form_tag contact_path, method: :POST do |f| %>
+  <div class="form-group">
+    <%= label_tag 'mail', "Email address" %>
+    <%= email_field_tag :mail, nil, class: 'form-control', placeholder: "john.doe@mail.com", required: true %>
+    <small class="form-text text-muted">Used to reach you back, enter a valid mail address...</small>
+  </div>
+  <div class="form-group">
+    <%= label_tag 'content', "Message" %>
+    <%= text_area_tag :content, nil, class: 'form-control', placeholder: "My awesome message", required: true %>
+  </div>
+  <div class="form-group">
+    <button type="submit" class="btn btn-primary">Send</button>
+  </div>
+  <% end %>
+</section>
