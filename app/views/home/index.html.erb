@@ -60,15 +60,15 @@
 
 <!-- Sponsors -->
 <% if @sponsors.count > 0 %>
-  <section class="mt-1">
-    <div class="row text-center card-like">
-      <% @sponsors.each do |sponsor| %>
-      <div class="col-md-3" style="margin:auto;">
-        <%= image_tag sponsor.logo.url, width: "150", class: "rounded mx-auto d-block" %>
-      </div>
-      <% end %>
+<section class="mt-1">
+  <div class="row text-center card-like">
+    <% @sponsors.each do |sponsor| %>
+    <div class="col-md-3" style="margin:auto;">
+      <%= image_tag sponsor.logo.url, width: "150", class: "rounded mx-auto d-block" %>
     </div>
-  </section>
+    <% end %>
+  </div>
+</section>
 <% end %>
 <!-- #### -->
 

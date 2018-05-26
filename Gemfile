@@ -39,6 +39,8 @@ gem 'jquery-rails'
 gem 'tinymce-rails'
 gem 'tinymce-rails-imageupload', github: 'PerfectlyNormal/tinymce-rails-imageupload'
 gem "paperclip", "~> 6.0.0"
+gem 'swiper-rails'
+gem 'superfish-rails'
 
 
 

@@ -14,6 +14,9 @@
 //= require turbolinks
 //= require jquery3
 //= require popper
+//= require superfish
+//= require hoverIntent
+//= require swiper
 //= require bootstrap
 //= require tinymce-jquery
 //= require_tree .
