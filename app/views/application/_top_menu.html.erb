@@ -1,36 +1,56 @@
-<nav class="navbar sticky-top navbar-expand-lg navbar-dark bg-dark">
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
-  <div class="collapse navbar-collapse w-100" id="navbar">
-    <ul class="navbar-nav m-auto align-middle">
-      
-      <li class="nav-item">
-        <%= link_to 'News', news_index_path, :class => "nav-link" %>
-      </li>
-      <li class="nav-item">
-        <a href="/" class="navbar-brand">
-          <%= image_tag("ninja-logo", width: "120", class: "navbar-brand-icon") %>
-          <% if Rails.application.secrets.github_branch && Rails.application.secrets.github_branch == "preprod" %>
-          <span class="label label-info" style="font-size:8px;">NinjaServ News</span>
-          <% elsif Rails.application.secrets.github_branch && Rails.application.secrets.github_branch == "dev" %>
-          <span class="label label-primary" style="font-size:8px;">Dev</span>
-          <% end %>
-        </a>
-      </li>
-      <li class="nav-item">
-        <%= link_to "Sponsors", sponsors_path, :class => "nav-link" %>
-      </li>
-      <li class="nav-item">
-        <%= link_to "Contact", contact_path, :class => "nav-link" %>
-      </li>
-      <li class="nav-item">
-        <% if is_logged_in %>
-        <%= link_to 'Logout', logout_path,method: :delete, :class => "nav-link" %>
-        <% else %>
-        <%= link_to 'Login', login_path, :class => "nav-link" %>
-        <% end %>
-      </li>
-    </ul>
-  </div>
-</nav>
+Welcome to our new Website!!!
+
+
+ <!--header-->                                                              
+      <header class="site-header">
+         <nav class="navbar navbar-default">
+            <div class="header-inner">
+               <div class="top-bar">
+                  <ul>
+                     <li><a href="#"><img src="images/bit-logo.jpg" alt="Bity"></a></li>
+                     <li><a href="#"><img src="images/pcgaming-logo.jpg" alt="pcgaming"></a></li>
+                  </ul>
+               </div>
+               <div class="container">
+                  <div class="row">
+                     <div class="col-md-12">
+                        <div class="brand"> <a href="index.html">
+                           <img src="images/ninjaserv-logo.png" alt="#">
+                           </a> 
+                        </div>
+                        <div class="right-nav">
+                           <nav  id="nav-wrap" class="main-nav">
+                              <div id="toggle-btn">
+                                 <span></span>
+                                 <span></span>
+                                 <span></span>
+                                 <span></span>
+                                 <span></span>
+                                 <span></span>
+                              </div>
+                              <ul class="sf-menu">
+                                 <li> <a href="https://ninjaserv.com/teams">TEAMS</a> </li>
+                                 <li> <a href="https://preprod.ninjaserv.com/news">NEWS </a></li>
+                                 <li> <a href="https://ninjaserv.com/aboutus">ABOUT US</a></li>
+                                 <li> <a href="https://ninjaserv.com/sponsors">SPONSORS</a></li>
+                                 <li> <a href="https://preprod.ninjaserv.com/contact">CONTACT</a> </li>
+                                 <li> <a href="https://ninjaserv.com/shop">LOGIN</a> </li>
+                                 <!--<li class="dropdown">
+                                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Contact Us <span class="caret"></span></a>
+                                    <ul class="dropdown-menu">
+                                      <li><a href="#">Some text</a></li>
+                                      <li><a href="#">Some text</a></li>
+                                      <li><a href="#">Some text</a></li>
+                                     
+                                    </ul>
+                                    </li>-->
+                              </ul>
+                           </nav>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </nav>
+      </header>
+      <!--header-->
